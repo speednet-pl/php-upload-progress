@@ -16,6 +16,10 @@ final class UploadProgress
         $this->name = ini_get("session.upload_progress.name");
     }
 
+    /**
+     * @param string $uploadName
+     * @return int
+     */
     public function progress($uploadName)
     {
         $key = $this->getKey($uploadName);
@@ -29,6 +33,10 @@ final class UploadProgress
         return round($progress * 100, 2);
     }
 
+    /**
+     * @param string $uploadName
+     * @return string
+     */
     private function getKey($uploadName)
     {
         return sprintf('%s%s', $this->prefix, $uploadName);
