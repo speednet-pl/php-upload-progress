@@ -21,7 +21,7 @@ final class UploadProgress
         $key = $this->getKey($uploadName);
 
         if (! isset($_SESSION[$key])) {
-            return 0;
+            return 100;
         }
 
         $progress = $_SESSION[$key]['bytes_processed'] / $_SESSION[$key]['content_length'];

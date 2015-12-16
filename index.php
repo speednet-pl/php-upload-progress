@@ -40,10 +40,9 @@
 
                 $progressBar.css('width', progress + '%');
                 $progressBar.find('span').html(progress + '%');
-                console.log(progress);
 
                 if (progress < 100) {
-                    setTimeout(updateProgress, 1000);
+                    setTimeout(updateProgress, 100);
                 }
             });
         }
